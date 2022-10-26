@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.signin.SignInFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in_to_your_account"
+        android:textSize="@dimen/email_and_password_text_size"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/login_textview_top_margin"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/email_text_view_top_margin"
+        android:text="@string/email"
+        android:textStyle="bold"
+        android:textSize="@dimen/login_page_and_signup_text_view_size"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+
+    <EditText
+        android:id="@+id/emailEditTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_page_margin_top"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        android:hint="@string/enter_email"
+        android:padding="@dimen/padding"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
+
+    <TextView
+        android:id="@+id/passwordTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_page_margin_top"
+        android:text="@string/password"
+        android:textStyle="bold"
+        android:textSize="@dimen/login_page_and_signup_text_view_size"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/emailEditTextView" />
+
+    <EditText
+        android:id="@+id/passwordEditTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_page_margin_top"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        android:padding="@dimen/padding"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/login_button_bottom_margin"
+        android:background="@drawable/login_button_background"
+        android:text="@string/log_in"
+        android:textSize="@dimen/login_and_signup_page_login_button_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        app:layout_constraintStart_toStartOf="@id/startGuide" />
+
+    <TextView
+        android:id="@+id/signTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:text="@string/do_you_not_have_a_lastfm_account_sign_up_here"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        android:layout_marginTop="18dp"
+        android:textSize="@dimen/login_page_and_signup_text_view_size"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

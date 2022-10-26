@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LastFmApp</string>
+    <string name="log_in_to_your_account">Log in to your \nAccount</string>
+    <string name="log_in">LOG IN</string>
+    <string name="explore">Explore</string>
+    <string name="saved">Saved</string>
+    <string name="email">Email</string>
+    <string name="enter_email">enter email</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="no_connection">No internet connection.</string>
+    <string name="unexpected_error">Unexpected error occurred.</string>
+    <string name="last_fm_app">Last fm app</string>
+    <string name="select_your_genre">Select your genre</string>
+    <string name="listeners_count">Listeners: %1$d</string>
+    <string name="do_you_not_have_a_lastfm_account_sign_up_here">Do you not have a Lastfm account? Sign up here</string>
+    <string name="search_albums_in_rock">Search albums in Rock</string>
+    <string name="name">Name</string>
+    <string name="namealbum">NameAlbum</string>
+    <string name="artist">Artist</string>
+    <string name="tabname">tabName</string>
+</resources>

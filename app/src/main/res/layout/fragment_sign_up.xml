@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.signup.SignUpFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textSize="@dimen/email_and_password_text_size"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/signup_page_text_view_top_margin"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/signup_page_email_text_view_margin_top"
+        android:text="@string/email"
+        android:textStyle="bold"
+        android:textSize="@dimen/login_page_and_signup_text_view_size"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <EditText
+        android:id="@+id/emailEditTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/signup_page_margin_top"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        android:hint="@string/enter_email"
+        android:padding="@dimen/padding"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
+    <TextView
+        android:id="@+id/passwordTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/signup_page_password_text_view_margin_top"
+        android:text="@string/password"
+        android:textStyle="bold"
+        android:textSize="@dimen/login_page_and_signup_text_view_size"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/emailEditTextView" />
+    <EditText
+        android:id="@+id/passwordEditTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/signup_page_password_edittext_view_margin_top"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        android:padding="@dimen/padding"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
+    <TextView
+        android:id="@+id/repeatPasswordTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/signup_page_password_text_view_margin_top"
+        android:text="@string/repeat_password"
+        android:textStyle="bold"
+        android:textSize="@dimen/login_page_and_signup_text_view_size"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditTextView" />
+    <EditText
+        android:id="@+id/repeatPasswordEditTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/signup_page_password_edittext_view_margin_top"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        android:padding="@dimen/padding"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@+id/repeatPasswordTextView" />
+
+
+    <Button
+        android:id="@+id/sigUpButton"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/signup_page_login_button_bottom_margin"
+        android:background="@drawable/login_button_background"
+        android:text="@string/sign_up"
+        android:textSize="@dimen/login_and_signup_page_login_button_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        app:layout_constraintStart_toStartOf="@id/startGuide" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

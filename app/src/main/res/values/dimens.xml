@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero_dp">0dp</dimen>
+    <dimen name="email_and_password_text_size">36sp</dimen>
+    <dimen name="login_and_signup_page_login_button_text_size">15sp</dimen>
+    <dimen name="login_button_bottom_margin">67dp</dimen>
+    <dimen name="login_textview_top_margin">96dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="login_page_and_signup_text_view_size">15sp</dimen>
+    <dimen name="email_text_view_top_margin">89dp</dimen>
+    <dimen name="login_page_margin_top">11dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="signup_page_text_view_top_margin">80dp</dimen>
+    <dimen name="signup_page_email_text_view_margin_top">90dp</dimen>
+    <dimen name="signup_page_margin_top">8dp</dimen>
+    <dimen name="signup_page_password_text_view_margin_top">16dp</dimen>
+    <dimen name="signup_page_password_edittext_view_margin_top">10dp</dimen>
+    <dimen name="signup_page_login_button_bottom_margin">22dp</dimen>
+    <dimen name="explore_page_margin_top">50dp</dimen>
+    <dimen name="select_gender_margin_top">22dp</dimen>
+    <dimen name="select_gender_text_size">18dp</dimen>
+    <dimen name="explore_recycler_view_margin_top">34dp</dimen>
+    <dimen name="search_edit_text_view_width">250dp</dimen>
+    <dimen name= "details_page_image_view_width">30dp</dimen>
+    <dimen name= "details_image_view_margin_top">12dp</dimen>
+    <dimen name="details_page_profile_image_view_width">90dp</dimen>
+    <dimen name="details_page_profile_image_view_height">90dp</dimen>
+    <dimen name="details_page_profile_image_margin_top">33dp</dimen>
+    <dimen name="details_page_profile_image_margin_start">100dp</dimen>
+
+
+</resources>
