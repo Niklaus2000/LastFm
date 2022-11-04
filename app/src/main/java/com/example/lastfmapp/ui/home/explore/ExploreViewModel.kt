@@ -22,12 +22,19 @@ class ExploreViewModel @Inject constructor(
     private val _listOfGenresState = MutableStateFlow<GenresUi>(GenresUi.Empty)
     val listOfGenresState = _listOfGenresState.asStateFlow()
 
-    init {
+
+
+
+    fun genres() {
         dispatcher.launchBackground(viewModelScope) {
-            genresRepository.fetchGenres(CONSTANTS.API_KEY).collectLatest {
+            genresRepository.fetchGenres(CONSTANTS.API_KEY).collectLatest { it ->
                 val genresData = when (it) {
                     is HandleResponse.Loading -> GenresUi.LoadingUi()
-                    is HandleResponse.Success -> GenresUi.ContentUi(it.data.toptags.tag!!.map { GenreUIModel(it.name,it.reach) })
+                    is HandleResponse.Success -> GenresUi.ContentUi(it.data.toptags.tag!!.map {
+                        GenreUIModel(
+                            it.name,
+                            it.reach
+                        ) })
                     is HandleResponse.Error -> GenresUi.ErrorUi(it.message)
 
                 }

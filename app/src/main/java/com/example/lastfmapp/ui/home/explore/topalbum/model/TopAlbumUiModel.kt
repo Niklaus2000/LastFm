@@ -5,9 +5,9 @@ import com.example.lastfmapp.data.model.topAlbum.Image
 
 data class TopAlbumUiModel(
     val title: String? ,
-    val artist: String?
- //   val position: String?
-   // val image: Image?
+    val artist: String?,
+    val rank: String?,
+     val image: String?
 
 
 )

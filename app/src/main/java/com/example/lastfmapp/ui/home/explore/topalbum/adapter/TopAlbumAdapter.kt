@@ -3,8 +3,8 @@ package com.example.lastfmapp.ui.home.explore.topalbum.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.lastfmapp.databinding.LayoutItemAlbumBinding
-import com.example.lastfmapp.ui.home.explore.model.GenreUIModel
 import com.example.lastfmapp.ui.home.explore.topalbum.model.TopAlbumUiModel
 
 class TopAlbumAdapter: RecyclerView.Adapter<TopAlbumAdapter.TopAlbumHolder>() {
@@ -40,6 +40,8 @@ class TopAlbumAdapter: RecyclerView.Adapter<TopAlbumAdapter.TopAlbumHolder>() {
 
             titleNameTextView.text = album.title
             artistNameTextView.text = album.artist
+            positionNumberTextView.text = album.rank
+
 
 
 
@@ -47,10 +49,4 @@ class TopAlbumAdapter: RecyclerView.Adapter<TopAlbumAdapter.TopAlbumHolder>() {
 
         }
     }
-
-
-
-
-
-
 }

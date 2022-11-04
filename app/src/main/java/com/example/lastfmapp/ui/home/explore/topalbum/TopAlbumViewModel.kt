@@ -46,7 +46,10 @@ class TopAlbumViewModel @Inject constructor(
                     is HandleResponse.Success -> TopAlbumUi.ContentUi(it.data.albums.album!!.map {
                         TopAlbumUiModel(
                             it.name!! ,
-                            it.artist!!.name)
+                            it.artist!!.name,
+                            it.attr!!.rank,
+                            it.image!!.find { it!!.size == "large" }.toString()
+                        )
                         //   it.attr!!.rank)
 //                        it.image!!.find { it!!.size == "large"
 //                        }
@@ -64,7 +67,9 @@ class TopAlbumViewModel @Inject constructor(
             searchRepo.fetchSearch(search).collectLatest {
                 val searchData = when (it) {
                     is HandleResponse.Loading ->  TopAlbumUi.LoadingUi()
-                    is HandleResponse.Success -> TopAlbumUi.ContentUi(it.data.results!!.albummatches!!.album!!.map {  TopAlbumUiModel(it!!.name, it!!.artist) })
+                    is HandleResponse.Success -> TopAlbumUi.ContentUi(it.data.results!!.albummatches!!.album!!.map {
+                        TopAlbumUiModel(it!!.name, it!!.artist, it.toString(), it.image.toString())
+                    })
                     is  HandleResponse.Error -> TopAlbumUi.ErrorUi(it.message)
                 }
                 _listOfSearchState.value = searchData

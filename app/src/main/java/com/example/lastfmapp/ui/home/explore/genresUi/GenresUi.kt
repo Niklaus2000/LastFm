@@ -26,7 +26,7 @@ interface GenresUi {
             adapter: GenresAdapter ,
         ) {
             binding.progressBar.visibility = View.GONE
-            adapter.updateAll(items)
+            adapter.submitList(items)
         }
     }
 

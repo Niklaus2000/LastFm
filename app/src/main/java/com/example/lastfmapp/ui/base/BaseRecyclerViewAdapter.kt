@@ -1,32 +1,34 @@
 package com.example.lastfmapp.ui.base
 
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lastfmapp.ui.home.explore.model.GenreUIModel
+import com.example.lastfmapp.ui.home.explore.topalbum.model.TopAlbumUiModel
 
 abstract class BaseRecyclerViewAdapter<T : Any> :
-    ListAdapter<T , RecyclerView.ViewHolder>(BaseItemCallback<T>()) {
+    ListAdapter<T, BaseRecyclerViewAdapter.BaseViewHolder<T>>(BaseItemCallback<T>()) {
+    override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) =
+        holder.bind(getItem(position))
 
     private val itemList = mutableListOf<GenreUIModel>()
-    abstract fun getViewHolder(parent: ViewGroup , viewType: Int): RecyclerView.ViewHolder
 
-    override fun onCreateViewHolder(parent: ViewGroup , viewType: Int): RecyclerView.ViewHolder =
-        getViewHolder(parent, viewType)
 
-    @Suppress("UNCHECKED_CAST")
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder , position: Int) =
-        (holder as Bind<T>).bind(getItem(position))
 
-    interface Bind<T> {
-        fun bind(item: T)
-    }
-
-    fun updateAll(list: List<GenreUIModel>) {
+     fun updateAll(items: List<GenreUIModel>) {
         this.itemList.clear()
-        this.itemList.addAll(list)
+        this.itemList.addAll(items)
         notifyDataSetChanged()
     }
 
-    //abstract fun setOnTimeClickListener(onItemClick: (GenreUIModel) -> Unit)
+    abstract class BaseViewHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        abstract fun bind(item: T)
+
+
+        protected fun onClick(block: () -> Unit) = itemView.setOnClickListener {
+            block.invoke()
+        }
+    }
 }
+

@@ -6,19 +6,18 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.lastfmapp.R
 import com.example.lastfmapp.databinding.FragmentExploreBinding
-import com.example.lastfmapp.databinding.LayoutItemGenreBinding
 import com.example.lastfmapp.ui.base.BaseFragment
+import com.example.lastfmapp.ui.core.OnItemClick
 import com.example.lastfmapp.ui.home.explore.adapter.GenresAdapter
-import com.example.lastfmapp.ui.home.explore.adapter.GenresItemViewHolder
 import com.example.lastfmapp.ui.home.explore.model.GenreUIModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ExploreFragment :
-    BaseFragment<ExploreViewModel , FragmentExploreBinding>(FragmentExploreBinding::inflate) {
+    BaseFragment<ExploreViewModel , FragmentExploreBinding>(FragmentExploreBinding::inflate),
+    OnItemClick<GenreUIModel> {
 
     override val viewModel: ExploreViewModel by viewModels()
     private lateinit var genresAdapter: GenresAdapter
@@ -31,31 +30,24 @@ class ExploreFragment :
 
         initAdapter()
 
+        viewModel.genres()
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.listOfGenresState.collect {
                 it.apply(binding, genresAdapter)
 
             }
         }
-        genresAdapter.setOnTimeClickListener {
-
-            findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToTopAlbumFragment(it.name.toString()))
-
-        }
-
-
-
 
     }
-
 
     private fun initAdapter(): Unit = with(binding) {
-        genresAdapter = GenresAdapter()
+        genresAdapter = GenresAdapter(this@ExploreFragment)
         rvGenres.adapter = genresAdapter
         rvGenres.layoutManager = LinearLayoutManager(requireContext())
+
     }
 
-
-
-
+    override fun onItemClick(item: GenreUIModel) {findNavController().navigate(
+        ExploreFragmentDirections.actionExploreFragmentToTopAlbumFragment(item.name.toString()))}
 }
